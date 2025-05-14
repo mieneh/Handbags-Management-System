@@ -14,7 +14,7 @@
 - Sau khi MySQL đã được khởi động, bấm nút Admin kế bên nút Stop của MySQL. Nó sẽ mở trang phpMyAdmin trong trình duyệt của bạn.
 - Trong trang phpMyAdmin, chọn Databases và tạo một database mới với tên *websellbag*.
 
-![alt text](./#/1.png)
+![alt text](./assets/1.png)
 - Sau khi tạo xong database, chọn SQL để mở giao diện nhập SQL.
 - Vào folder database, mở file *data.sql* -> Copy, dán câu lệnh SQL và bấm *Go* để chạy SQL.
 
@@ -22,7 +22,7 @@
 - Sao chép toàn bộ thư mục litty.com vào thư mục **C:\xampp\htdocs**.
 - Đảm bảo đường dẫn cuối cùng sẽ là: C:\xampp\htdocs\litty.com
 
-![alt text](./#/2.png)
+![alt text](./assets/2.png)
 
 ***Bước 4. Truy cập vào ứng dụng web***
 
@@ -34,7 +34,7 @@ Mở trình duyệt và truy cập địa chỉ http://localhost/litty.com
 
 -> Truy cập vào giao diện Admin để quản lý sản phẩm, đơn hàng và các chức năng khác.
 
-![alt text](./#/3.png)
+![alt text](./assets/3.png)
 
 - Tài khoản khách (dùng để mua hàn hoặc không cần đăng nhập vẫn mua được):
     + Tên đăng nhập: <email người dùng>
@@ -42,4 +42,4 @@ Mở trình duyệt và truy cập địa chỉ http://localhost/litty.com
 
 -> Truy cập vào giao diện Khách để mua hàng và xem các sản phẩm.
 
-![alt text](./#/4.png)
+![alt text](./assets/4.png)
