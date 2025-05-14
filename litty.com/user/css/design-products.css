@@ -1,0 +1,64 @@
+.heading {text-align: center;}
+.heading h2 {font-size: 1.8rem; text-transform: uppercase;}
+.design-product {background-color: white; padding: 22px 0px;}
+.container {display: flex; max-width: 1900px; margin: 0 auto;}
+.left, .right {padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}
+.left {flex: 1.5; margin-right: 20px;}
+.right {flex: 2;}
+.price-section {display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px;}
+.price {font-size: 24px; color: red; font-weight: bold;}
+.old-price {font-size: 14px; text-decoration: line-through; color: grey;}
+.design-options, .quantity-section {margin-bottom: 20px;}
+.text-input {margin-bottom: 15px;}
+.text-input label {display: block; margin-bottom: 5px; font-weight: bold;}
+.text-input input {width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;}
+.quantity-section label {font-weight: bold;}
+.quantity-section input {width: 60px; padding: 5px; margin-left: 10px; border: 1px solid #ccc; border-radius: 5px;}
+.button-container {display: flex; justify-content: center;}
+.add-to-cart {justify-content: center; margin: 0 auto; width: 30%; padding: 10px; background: var(--main-color); color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 10px;}
+.add-to-cart:hover {background: linear-gradient(#ff43b4, #f54551, #ff6f31);}
+.image-container {position: relative; display: flex; justify-content: center; align-items: center; height: 500px;}
+.image-container img {max-width: 100%; max-height: 100%; object-fit: contain; }
+.text1 {top: 50%; left: 50%; transform: translateX(-50%); font-family: 'Dancing Script', cursive; font-size: 30px;}
+.text-overlay {position: absolute; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); text-align: center;}
+.option-buttons {display: flex; gap: 10px; margin-bottom: 15px;}
+.option-buttons label {display: block; margin-bottom: 5px; font-weight: bold;}
+.button {border: none; cursor: pointer; box-shadow: 0 0 0 0.5px #ccc inset;}
+.button.selected {border: 2px solid red;}
+.button.template, .button.square {width: 60px; height: 60px; background-size: cover; background-position: center;}
+.button.rectangle {width: 90px; height: 60px; background-size: cover; background-position: center;}
+.button.black, .button.white, .button.purple, .button.green, .button.blue, .button.pink {border-radius: 50%; padding: 15px;}
+.button.black {background-color: #000;}
+.button.white {background-color: #fff;}
+.button.purple {background-color: #c3a7e3;}
+.button.green {background-color: #84d9ba;}
+.button.blue {background-color: #80bdf2;}
+.button.pink {background-color: #f291a3;}
+
+.text-inputs-container {display: flex; justify-content: space-between; margin-bottom: -10px;}
+.text-input {flex: 1; margin-right: 10px;}
+.text-input:last-child {margin-right: 0;}
+
+@media (max-width: 1200px) {
+    .container { flex-direction: column; align-items: center; }
+    .left, .right { width: 90%; margin: 10px 0; }
+    .add-to-cart { width: 70%; }
+    .quantity-section input { width: 100%; margin-left: 0; margin-top: 5px; }
+}
+
+@media (max-width: 768px) {
+    .container { padding: 0 10px; }
+    .left, .right { width: 100%; padding: 10px; }
+    .price { font-size: 18px; }
+    .old-price { font-size: 12px; }
+    .quantity-section input { width: 100%; padding: 8px; }
+    .button-container { width: 100%; }
+    .add-to-cart { width: 100%; font-size: 14px; padding: 8px; }
+}
+
+@media (max-width: 480px) {
+    .image-container img { height: 300px; }
+    .text1 { font-size: 20px; }
+    .button { width: 50px; height: 50px; }
+    .quantity-section input { width: 50px; }
+}

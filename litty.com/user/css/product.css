@@ -1,0 +1,273 @@
+.heading {
+    text-align: center;
+}
+
+.heading h2 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.products-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.products-container .box {
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.products-container .box img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    object-position: center;
+    padding: 20px;
+    background: var(--second-color);
+    border-radius: 0.5rem;
+}
+
+.products-container .box:hover img {
+    transform: scaleX(-1);
+    transition: 0.4s all linear;
+}
+
+.products-container .box h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0.5rem 0 0.5rem;
+}
+
+.products-container .box span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.products-container .box .bx {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 20px;
+    color: var(--bg-color);
+    background: var(--main-color);
+    border-radius: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+}
+
+.products-container .box .bx:hover {
+    background: linear-gradient(#ff43b4, #f54551, #ff6f31);
+}
+
+/* Detail */
+.product-container {
+    display: flex;
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-images {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.product-images img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.thumbnails img {
+    width: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.thumbnails img:hover {
+    transform: scale(1.1);
+}
+
+.product-details {
+    flex: 2;
+}
+
+.product-details h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.product-details .price {
+    color: red;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-details .status {
+    margin-bottom: 20px;
+    color: green;
+    font-weight: bold;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.quantity input {
+    width: 50px;
+    height: 40px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.quantity button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.quantity button:hover {
+    background-color: #333;
+}
+
+.description {
+    margin-top: 20px;
+}
+
+.description h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.description p {
+    margin-bottom: 10px;
+}
+
+.description ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.description ul li {
+    margin-bottom: 5px;
+}
+.add-to-cart {
+    background: var(--bg-color);
+}
+.add-to-cart:hover {
+    background: linear-gradient(#ff43b4, #f54551, #ff6f31);
+}
+.promo-section {
+    margin-top: 30px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.promo-section .box {
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.promo-section .box img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    object-position: center;
+    padding: 20px;
+    background: var(--second-color);
+    border-radius: 0.5rem;
+}
+
+.promo-section .box:hover img {
+    transform: scaleX(-1);
+    transition: 0.4s all linear;
+}
+
+.promo-section .box h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0.5rem 0 0.5rem;
+}
+
+.promo-section .box span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.promo-section .box .bx {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 20px;
+    color: var(--bg-color);
+    background: var(--main-color);
+    border-radius: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+}
+
+.promo-items {
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.promo-item {
+    text-align: center;
+}
+
+.promo-item img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.promo-price {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.promo-total {
+    text-align: right;
+    margin-top: 20px;
+}

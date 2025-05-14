@@ -1,0 +1,260 @@
+/* Reset CSS mặc định */
+* {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Định dạng chung */
+body {
+    font-family: "Nunito", sans-serif;
+    background: linear-gradient(#f7a9ee, #FF7B89, #ffc053);
+    background-size: 400% 400%;
+    animation: galaxyAnimation 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Hiệu ứng chuyển động của galaxy */
+@keyframes galaxyAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    width: 200%;
+    max-width: 900px;
+}
+
+.register {
+    width: 200%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-container {
+    width: 90%;
+    background-color: #fff;
+    padding: 40px 30px 30px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    text-align: center;
+    margin-top: -20px;
+}
+
+.logo img {
+    width: 200px;
+}
+
+.card {
+    padding: 20px;
+}
+
+.header h5 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: -3px;
+    color: #333;
+}
+
+.header p {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group-text {
+    background-color: #fcfcfc;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+select[type="select"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 0 5px 5px 0;
+    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+}
+
+select:required:invalid {
+  color: gray;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+}
+option[value=""][disabled] {
+  display: none;
+}
+option {
+  color: black;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+}
+
+.form-check {
+    margin-bottom: 10px;
+}
+
+.form-check label {
+    font-size: 14px;
+    color: #333;
+}
+
+button.btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f80e45;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.btn:hover {
+    background-color: #f60019;
+}
+
+p.small {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+p.small a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+p.small a:hover {
+    text-decoration: underline;
+}
+
+/* Invalid feedback */
+.invalid-feedback {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* General notification styles */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    position: relative;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Success notification styles */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-success i {
+    color: #28a745;
+    margin-right: 10px;
+}
+
+/* Error notification styles */
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-danger i {
+    color: #dc3545;
+    margin-right: 10px;
+}
+
+/* Close button styles */
+.btn-close {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    line-height: 0.5;
+    color: #000;
+}
+
+.btn-close:hover {
+    color: #333;
+}
+
+/* Notification fade-out effect (if needed) */
+.fade {
+    opacity: 0;
+    transition: opacity 0.15s linear;
+}
+
+/* Show effect */
+.show {
+    opacity: 1;
+}
+
+/* Optional: Add some margin to the notification icons */
+i {
+    margin-right: 8px;
+}
+
+/* Đảm bảo rằng các phần tử form-group trong row được hiển thị theo hàng ngang */
+.row {
+  display: flex;
+  gap: 20px; /* Khoảng cách giữa các cột */
+}
+
+.row .form-group {
+  flex: 1; /* Đảm bảo rằng các cột sẽ có cùng kích thước */
+}
+
+/* Tùy chỉnh cho các thiết bị có màn hình nhỏ (mobile) */
+@media (max-width: 768px) {
+  .row {
+    display: block; /* Trên màn hình nhỏ, hiển thị theo chiều dọc */
+  }
+}

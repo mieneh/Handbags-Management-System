@@ -1,0 +1,88 @@
+.heading {
+    text-align: center;
+}
+
+.heading h2 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.cart-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.cart-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-container thead {
+    background-color: #f2f2f2;
+}
+
+.cart-container th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-container th {
+    font-weight: bold;
+    color: #666;
+}
+
+.cart-container td {
+    color: #555;
+}
+
+.cart-container input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.cart-container button {
+    padding: 5px 10px;
+    background: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cart-container button:hover {
+    background: linear-gradient(#ff43b4, #f54551, #ff6f31);
+}
+
+.cart-container .btn-danger {
+    background-color: #dc3545;
+}
+
+.cart-container .btn-danger:hover {
+    background-color: #c82333;
+}
+
+.cart-container h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+.cart-container a.btn {
+    margin-top: 20px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 4px;
+    background: var(--main-color);
+    color: white;
+}
+
+.cart-container a.btn:hover {
+    background: linear-gradient(#ff43b4, #f54551, #ff6f31);
+}

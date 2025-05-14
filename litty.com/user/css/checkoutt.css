@@ -1,0 +1,169 @@
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 20px;
+} */
+
+.heading {
+    text-align: center;
+}
+
+.heading h2 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.container {
+    max-width: 1350px;
+    background-color: white;
+    padding: 5px 30px;
+    margin: 22px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.left {
+    flex-basis: 55%;
+}
+
+.right {
+    flex-basis: 40%;
+}
+
+h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-group {
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #666;
+}
+
+input[type="text"], input[type="email"], select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input:required:invalid, select:required:invalid {
+  color: rgb(40, 40, 40);
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+}
+
+option[value=""][disabled] {
+  display: none;
+  background:#ddd;
+  color: rgb(40, 40, 40);
+}
+
+option {
+  color: black;
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Shipping Method Styles */
+.method {
+    display: flex;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.method label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.order-summary {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.order-summary p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 10px 0;
+}
+
+.btn {
+    margin-top: 10px;
+    background: var(--main-color);
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background: linear-gradient(#ff43b4, #f54551, #ff6f31);
+}
+
+.form-group-submit {
+    display: flex;
+    justify-content: left;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.btn-submit {
+    width: 20%;
+    margin-top: 10px;
+    padding: 10px;
+    background: var(--main-color);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(#ff43b4, #f54551, #ff6f31);
+}
