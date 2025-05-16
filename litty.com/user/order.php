@@ -28,6 +28,16 @@ if (isset($_GET['delete_order'])) {
     $checkStmt->execute([$orderID, $userID]);
 
     if ($checkStmt->rowCount() > 0) {
+        // Lấy thông tin đơn hàng để lấy mã giảm giá
+        $order = $checkStmt->fetch(PDO::FETCH_ASSOC);
+        $discountCode = $order['discountCode'] ?? null;
+
+        // Nếu có mã giảm giá thì cập nhật lại limitUse
+        if ($discountCode) {
+            $updateDiscountStmt = $pdo->prepare("UPDATE Discounts SET limitUse = limitUse + 1 WHERE ID = ?");
+            $updateDiscountStmt->execute([$discountCode]);
+        }
+
         // Xóa các mục trong OrderItems liên quan đến đơn hàng
         $deleteItemsStmt = $pdo->prepare("DELETE FROM OrderItems WHERE orderID = ?");
         $deleteItemsStmt->execute([$orderID]);
@@ -53,7 +63,7 @@ if (isset($_GET['delete_order'])) {
 
 <section class="section">
     <div class="heading">
-        <h2>Danh sách đơn hàng</h2>
+        <h2>Danh Sách Đơn Hàng</h2>
     </div>
     <div class="order-container">
         <?php if (count($orders) > 0): ?>
@@ -81,10 +91,18 @@ if (isset($_GET['delete_order'])) {
                             <td><?php echo htmlspecialchars($order['orderstatus']); ?></td>
                             <td><?php echo htmlspecialchars($order['created']); ?></td>
                             <td>
-                            <form action="" method="GET" style="display:inline;">
-                                <input type="hidden" name="delete_order" value="<?php echo htmlspecialchars($order['ID']); ?>">
-                                <button type="submit" onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này?');" style="background: var(--main-color); padding: 5px 10px; color: white; border: none;  border-radius: 4px; cursor: pointer;">X</button>
-                            </form>
+                                <form action="" method="GET" style="display:inline;">
+                                    <input type="hidden" name="delete_order" value="<?php echo htmlspecialchars($order['ID']); ?>">
+                                    <button type="submit" 
+                                        <?php if ($order['orderstatus'] !== 'pending') echo 'disabled'; ?>
+                                            onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này?');"
+                                            style="background: var(--main-color);  padding: 5px 10px; color: white; border: none; border-radius: 4px; 
+                                                cursor: <?php echo ($order['orderstatus'] === 'pending') ? 'pointer' : 'not-allowed'; ?>; 
+                                                opacity: <?php echo ($order['orderstatus'] === 'pending') ? '1' : '0.5'; ?>;
+                                            "
+                                        >X
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     <?php endforeach; ?>

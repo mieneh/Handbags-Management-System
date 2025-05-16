@@ -18,16 +18,9 @@ $ward = $_POST['ward'] ?? '';
 $phone = $_POST['phone'] ?? null;
 $shipping_method = $_POST['shipping_method'] ?? 'home_delivery'; // Mặc định là giao hàng tận nơi
 $payment_method = $_POST['payment_method'] ?? 'cod'; // Mặc định là thanh toán khi giao hàng
+$total = isset($_POST['total']) ? (float)$_POST['total'] : 0;
+$discountCode = $_POST['discount_code'] ?? null;
 
-// Tính tổng giá trị đơn hàng
-$total = 0;
-foreach ($_SESSION['cart'] as $item) {
-    if (isset($item['price'], $item['quantity'])) {
-        $total += $item['price'] * $item['quantity'];
-    }
-}
-$shipping_fee = $shipping_method === 'store_pickup' ? 0 : 30000; // Phí ship
-$total += $shipping_fee;
 
 // Hàm sinh ID cho đơn hàng
 function generateOrderID($pdo) {
@@ -46,14 +39,14 @@ $orderID = generateOrderID($pdo);
 
 $userID = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 if ($userID) {
-    $stmt = $pdo->prepare("INSERT INTO Orders (ID, guestname, guestaddress, guestphone, total, userID) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->execute([$orderID, $name, $address . ', ' . $ward . ', ' . $district . ', ' . $city, $phone, $total, $userID]);
+    $stmt = $pdo->prepare("INSERT INTO Orders (ID, guestname, guestaddress, guestphone, total, discountCode, userID) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->execute([$orderID, $name, $address . ', ' . $ward . ', ' . $district . ', ' . $city, $phone, $total, $discountCode, $userID]);
 } else {
-    $stmt = $pdo->prepare("INSERT INTO Orders (ID, guestname, guestaddress, guestphone, total) VALUES (?, ?, ?, ?, ?)");
-    $stmt->execute([$orderID, $name, $address . ', ' . $ward . ', ' . $district . ', ' . $city, $phone, $total]);
+    $stmt = $pdo->prepare("INSERT INTO Orders (ID, guestname, guestaddress, guestphone, total, discountCode) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->execute([$orderID, $name, $address . ', ' . $ward . ', ' . $district . ', ' . $city, $phone, $total, $discountCode]);
 }
 
-// ** Cập nhật session để lưu orderID **
+// Cập nhật session để lưu orderID
 $_SESSION['orderID'] = $orderID;
 
 // Thêm các sản phẩm vào bảng OrderItems
@@ -62,6 +55,12 @@ foreach ($_SESSION['cart'] as $key => $item) {
         $stmt = $pdo->prepare("INSERT INTO OrderItems (orderID, productID, quantity, price, shape, color, text, colorText, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->execute([$orderID, $item['id'], $item['quantity'], $item['price'], $item['shape'] ?? null, $item['color'] ?? null, $item['text'] ?? null, $item['colorText'] ?? null, $item['image'] ?? null]);
     }
+}
+
+// Giảm số lần sử dụng mã giảm giá nếu có
+if (!empty($discountCode)) {
+    $stmt = $pdo->prepare("UPDATE Discounts SET limitUse = limitUse - 1 WHERE ID = ? AND limitUse > 0");
+    $stmt->execute([$discountCode]);
 }
 
 // Xóa giỏ hàng sau khi hoàn tất đơn hàng

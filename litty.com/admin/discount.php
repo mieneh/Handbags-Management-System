@@ -10,12 +10,6 @@
 
 <?php include 'header.php'; ?>
 
-<style>
-    /* .breadcrumb {
-        margin-top: 5px;
-    } */
-</style>
-
 <main id="main" class="main">
     
     <div class="pagetitle">
@@ -91,7 +85,7 @@
                                         <td class="text-center align-middle"><?php echo htmlspecialchars($discount['ID']); ?></td>
                                         <td class="text-center align-middle"><?php echo htmlspecialchars(number_format($discount['discount'], 0)) . '%'; ?></td>
                                         <td class="text-center align-middle"><?php echo htmlspecialchars($discount['sDate']); ?></td>
-                                        <td class="text-center align-middle"><?php echo isset($discount['eDate']); ?></td>
+                                        <td class="text-center align-middle"><?php echo htmlspecialchars($discount['eDate']); ?></td>
                                         <td class="text-center align-middle"><?php echo htmlspecialchars($discount['limitUse']); ?></td>
                                         <td class="text-center align-middle"><?php echo htmlspecialchars($discount['created']); ?></td>
                                         <td>

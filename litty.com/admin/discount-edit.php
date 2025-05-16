@@ -74,7 +74,7 @@ if (!$discount) {
                     </div>
                     <div class="col-md-6">
                         <label for="discount" class="form-label">Giá trị giảm (%)</label>
-                        <input type="number" class="form-control" name="discount" value="<?php echo htmlspecialchars($discount['discount']); ?>" required>
+                        <input type="number" class="form-control" name="discount" value="<?php echo htmlspecialchars(number_format($discount['discount'], 0)); ?>" required min="1" max="100" step="1">
                     </div>
                     <div class="col-md-6">
                         <label for="sDate" class="form-label">Ngày bắt đầu</label>
