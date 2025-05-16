@@ -3,7 +3,7 @@
 **Litty - Stay Lit, Stay Stylish**
 
 -----------------------------------------------------------------------------
-**Cách chạy chương trình Farm Track**
+**Cách chạy chương trình Litty**
 
 ***Bước 1. Cài đặt và khởi động XAMPP***
 - Tải XAMPP từ link sau: https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.2.12/xampp-windows-x64-8.2.12-0-VS16-installer.exe
