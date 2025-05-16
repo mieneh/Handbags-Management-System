@@ -126,5 +126,3 @@
 </main>
 
 <?php include 'footer.php'; ?>
-
-<!-- <i class="bi bi-x"></i> -->
